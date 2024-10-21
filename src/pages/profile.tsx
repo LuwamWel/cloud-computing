@@ -8,6 +8,8 @@ export default function Profile() {
     const { user, setUser } = useAuth()
     const [file, setFile] = useState<File | null>(null);
     const [message, setMessage] = useState('');
+    
+    
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -20,6 +22,7 @@ export default function Profile() {
                 setMessage('Failed to fetch user data.');
             }
         };
+        
 
         fetchUser();
     }, []); // Only runs on mount
@@ -75,6 +78,8 @@ export default function Profile() {
                     <button onClick={() => handleUpload(user.email)}>Upload</button>
                 </div>
             }
+            {/* Display message if it exists */}
+            {message && <p>{message}</p>}
         </>
     )
 }

@@ -41,6 +41,9 @@ export default function Login() {
                     />
                 </p>
                 <button type="button" onClick={handleLogin}>Submit</button>
+                
+                {/* Example usage of 'user' */}
+                {user && <p>Logged in as: {user.email}</p>}
             </form>
         </>
     );
